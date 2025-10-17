@@ -1,18 +1,23 @@
 package org.example;
 
+    public class Student {
+        int NumberStudentCard;
+        String Name;
+        String LastName;
+        int YearOfStudy;
+        double AverageMath;
+        double AverageEconomy;
+        double AverageForeignLang;
+    }
 
-public class Student {
-    int NumberStudentCard;
-    String Name;
-    String LastName;
-    int YearOfStudy;
-    double AverageMath;
-    double AverageEconomy;
-    double AverageForeignLang;
-}
     class StudentTest {
+        void averageGrade (Student student ) {
+            double srOcenka = (student.AverageEconomy + student.AverageForeignLang + student.AverageMath) / 3;
+            System.out.println("Средняя арифметическая оценка студента" + " " + student.Name + " " + student.LastName  + ": " + srOcenka);
+        };
 
         public static void main(String[] args) {
+
             Student StOne = new Student();
             Student StTwo = new Student();
             Student StThree = new Student();
@@ -38,9 +43,10 @@ public class Student {
             StThree.AverageForeignLang = 3.5;
             StThree.AverageMath = 3.5;
 
-            System.out.println("Средняя арифметическая оценка студента" + " " + StOne.Name + " " + StOne.LastName + ":" + (StOne.AverageEconomy + StOne.AverageForeignLang + StOne.AverageMath)/3);
-            System.out.println("Средняя арифметическая оценка студента" + " " + StTwo.Name + " " + StTwo.LastName + ":" + (StTwo.AverageEconomy + StTwo.AverageForeignLang + StTwo.AverageMath)/3);
-            System.out.println("Средняя арифметическая оценка студента" + " " + StThree.Name + " " + StThree.LastName + ":" + (StThree.AverageEconomy + StThree.AverageForeignLang + StThree.AverageMath)/3);
+            StudentTest Test =  new StudentTest();
+            Test.averageGrade(StOne);
+            Test.averageGrade(StTwo);
+            Test.averageGrade(StThree);
         }
     }
 
