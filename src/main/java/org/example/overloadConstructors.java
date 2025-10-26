@@ -3,8 +3,8 @@ package org.example;
 public class overloadConstructors {
 
 
-    overloadConstructors (int a5) {
-        this (a5, 0, 0, 0, 0 );
+    overloadConstructors () {
+        this (0, 0, 0, 0, 0 );
     }
     overloadConstructors (int a4, int b4) {
         this (a4, b4, 0, 0, 0 );
@@ -52,7 +52,7 @@ class overloadConstructorsTest {
         System.out.println("Cумма чисел = " + overloadConstructors3.sum());
         overloadConstructors overloadConstructors4 = new overloadConstructors ( 2,3);
         System.out.println("Сумма чисел = " + overloadConstructors4.sum());
-        overloadConstructors overloadConstructors5 = new overloadConstructors ( 2);
+        overloadConstructors overloadConstructors5 = new overloadConstructors ();
         System.out.println("Сумма чисел = " + overloadConstructors5.sum());
     }
 }

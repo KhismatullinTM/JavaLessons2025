@@ -1,33 +1,40 @@
 package org.example;
 
 public class Employee {
-        int id;
-        String surname;
-        int age;
-        double salary;
+    int id;
+    public String surname;
+    int age;
+    private double salary;
 
-        Employee(int id1, String surname1, int age1, double salary1) {
-            id = id1;
-            surname = surname1;
-            age = age1;
-            salary = salary1;
-        }
+    public void showId (){System.out.println("Студент с номером: " + id);}
+    public  void showName (){System.out.println("Имя студента: " + surname);}
+    public  void showAge (){System.out.println("Курс стундента: " + age);}
 
-        double doubleSalary() {
-            salary = salary * 2;
-            return salary;
-        }
+    private Employee (String surname3){
+        this(0, surname3,0,0.0);
     }
 
+    Employee(int id2, String surname2, int age2) {
+        this(id2, surname2, age2, 0.0);
+    }
+
+    public Employee (int id1, String surname1, int age1, double salary1) {
+        id = id1;
+        surname = surname1;
+        age = age1;
+        salary = salary1;
+    }
+}
+
     class EmployeeTest {
-        public static void main(String[] args) {
-            org.example.Employee eOne = new org.example.Employee(20, "Timur", 25, 100);
-            org.example.Employee eTwo = new org.example.Employee(25, "Damir", 30, 200);
+        public static void main (String [] args) {
+        Employee emp1 = new Employee(1, "Никита", 3, 12.5);
 
-            eOne.doubleSalary();
-            System.out.println("Зарплата сотрудника " + eOne.surname + " = " + eOne.salary);
-
-            eTwo.doubleSalary();
-            System.out.println("Зарплата сотрудника  " + eTwo.surname + " = " + eTwo.salary);
-        }
+        System.out.println(emp1.surname); // OK (public)
+            System.out.println(emp1.id);      // OK (package-private в том же пакете)
+            // System.out.println(e1.salary); // НЕЛЬЗЯ (private)
+        emp1.showId();
+        emp1.showName();
+        emp1.showAge();
+        };
     }
