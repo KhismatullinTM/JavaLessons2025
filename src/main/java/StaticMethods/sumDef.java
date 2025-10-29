@@ -13,17 +13,25 @@ public class sumDef {
 
     final static double p = 3.14;
 
-    public double square (double r){
+    public double square(double r) {
         double radiusResult = r * r;
         return radiusResult * p;
     }
 
-    public static double length (double r){
-         double lengthKrug = 2 * r * p;
-         return lengthKrug;
+    public static double length(double r) {
+        double lengthKrug = 2 * r * p;
+        return lengthKrug;
     }
-    public void results (double r) {
+
+    public void results(double r) {
         System.out.println("Значение радиуса круга: " + square(r));
         System.out.println("Значение длины круга: " + length(r));
+    }
+}
+
+class sumTest {
+    public static void main(String[] args) {
+        System.out.println("Сумма чисел: " + sumDef.sum(5, 5, 6));
+        sumDef.div(5, 5);
     }
 }
